@@ -1,26 +1,26 @@
-GET  http://localhost:4000/subscribers/
+GET  http://localhost:3000/user/
 
 ###
-GET http://localhost:4000/subscribers/60200352b7138913caf6db0a
+GET http://localhost:3000/user/6026672f0707c246d43e99bd
 
 ###
-POST  http://localhost:4000/subscribers/
+POST  http://localhost:3000/user/
 Content-Type: application/json
 
 {
-    "name":"Amazing ppp",
-    "subscribedToChannel":"Web dev simplified"
+    "firstName":"Amazing ppp",
+    "lastName":"Web dev simplified"
 }
 
 ###
-DELETE http://localhost:4000/subscribers/60200352b7138913caf6db0a
+DELETE http://localhost:3000/user/602669280bb5e02b589f42c4
 
 
 ###
-PATCH  http://localhost:4000/subscribers/60200352b7138913caf6db0a
+PATCH  http://localhost:3000/user/6026672f0707c246d43e99bd
 Content-Type: application/json
 
 {
-    "name":"Amazing ppp",
-    "subscribedToChannel":"Web dev simplified"
+    "firstName":"Amazing ppp",
+    "lastName":"Web dev simplified"
 }

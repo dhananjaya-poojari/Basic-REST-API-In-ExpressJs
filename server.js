@@ -2,19 +2,14 @@ require('dotenv').config()
 
 const express = require('express')
 const app = express()
-const mongoose = require('mongoose')
-const Port=process.env.Port||3000
+const Port=process.env.Port||3000;
 
-mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser:true,useUnifiedTopology: true});
-
-const db=mongoose.connection;
-db.on('error',(error)=>console.log(error))
-db.once('open',()=>console.log('connected to database'))
-
+const db=require('./DB/connection')
+db();
 app.use(express.json())
 
-const subscribeRouter=require('./routers/subscribers')
-app.use('/subscribers',subscribeRouter)
+const subscribeRouter=require('./routers/userApi')
+app.use('/user',subscribeRouter)
 
 
 app.listen(Port,()=>console.log('Server started'))
